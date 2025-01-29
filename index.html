@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Guest Scorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Wedding Guest Scorer</h1>
+    <p>Score your wedding guests to decide who to invite!</p>
+
+    <!-- Upload CSV Section -->
+    <div class="upload-section">
+      <label for="uploadCSV">Upload Guest List (CSV):</label>
+      <input type="file" id="uploadCSV" accept=".csv">
+      <button id="processCSV">Process Uploaded Guests</button>
+    </div>
+
+    <!-- Guest Form -->
+    <form id="guestForm">
+      <label for="guestName">Guest Name:</label>
+      <input type="text" id="guestName" placeholder="Enter guest name" required>
+
+      <label for="relationship">Relationship to Couple:</label>
+      <select id="relationship" required>
+        <option value="30">Immediate Family</option>
+        <option value="25">Close Family / Close Friends</option>
+        <option value="20">Extended Family</option>
+        <option value="10">Work Colleagues</option>
+        <option value="5">Acquaintances</option>
+      </select>
+
+      <label for="involvement">Level of Involvement:</label>
+      <select id="involvement" required>
+        <option value="20">Seen/Talked to Weekly</option>
+        <option value="15">Seen/Talked to Monthly</option>
+        <option value="10">Seen/Talked to Yearly</option>
+        <option value="5">Seen/Talked to Rarely</option>
+      </select>
+
+      <label for="emotionalImportance">Emotional Importance:</label>
+      <select id="emotionalImportance" required>
+        <option value="20">Essential to Your Happiness</option>
+        <option value="15">Important but Not Essential</option>
+        <option value="10">Neutral</option>
+        <option value="5">Low Importance</option>
+      </select>
+
+      <label for="reciprocity">Reciprocity:</label>
+      <select id="reciprocity" required>
+        <option value="15">Invited You to Their Wedding</option>
+        <option value="10">Likely to Invite You in the Future</option>
+        <option value="5">Unlikely to Invite You</option>
+      </select>
+
+      <label for="logistics">Logistical Considerations:</label>
+      <select id="logistics" required>
+        <option value="15">Easy to Accommodate</option>
+        <option value="10">Moderate Effort to Accommodate</option>
+        <option value="5">Difficult to Accommodate</option>
+      </select>
+
+      <button type="submit">Calculate Score</button>
+    </form>
+
+    <!-- Results Section -->
+    <div id="result"></div>
+
+    <!-- Export Section -->
+    <div class="export-section">
+      <button id="exportCSV">Export Final Guest List</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
